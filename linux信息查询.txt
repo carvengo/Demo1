@@ -1,0 +1,42 @@
+--显卡信息查询
+watch -n 0 nvidia-smi
+查看显卡基本信息
+lspci | grep -i nvidia 
+
+--cpu信息查询
+lscpu
+
+--linux A、B之前文件传输
+scp -r /home/HJ/4d/test root@10.10.10.101:/data
+scp -r -P 2200 /home/HJ/4d/test admin@180.168.172.76:/home/admin/smartWorld
+scp -r -P 22 /home/admin/smartWorld/nezha.tar root@192.168.172.76:/data/smartWorld
+
+tar cf hhh.tar hhh         # 仅仅打包
+tar jcf hhh.tar.bz2 hhh    # 压缩打包
+tar czf hhh.tar.gz hhh     # 压缩打包
+zip hhh.zip.gz hhh         # 压缩打包
+
+tar xf hhh.tar hhh
+tar jxf hhh.tar.bz2 hhh
+tar xzf hhh.tar.gz hhh
+gzip -d xx.tar.gz
+
+zip all.zip *.jpg   #将所有.jpg的文件压缩成一个zip包
+unzip all.zip    #将all.zip中的所有文件解压到当前目录中
+unzip all.zip -d all #将all.zip 中的所有文件解压到当前目录中的all文件夹中
+zip -r hy.zip hy  #将当前目录下的hy文件夹压缩为hy.zip
+zip -r hy.zip hy 123.txt  #将当前目录下的hy文件夹和123.txt压缩为hy.zip
+
+查看已删除但是未释放空间的文件
+lsof | grep deleted
+lsof -n | grep deleted
+
+保存，但不退出vi                          :w
+保存并退出vi                                 :wq
+退出vi，但不保存更改                   :q!
+用其他文件名保存                         :w filename
+在现有文件中保存并覆盖该文件    :w! filename
+
+###yml内容替换
+ sed -i 's/127.0.0.1/192.168.19.201/g' docker-compose.yml
+
