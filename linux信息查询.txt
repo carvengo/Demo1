@@ -39,4 +39,7 @@ lsof -n | grep deleted
 
 ###yml内容替换
  sed -i 's/127.0.0.1/192.168.19.201/g' docker-compose.yml
+ 
+#####
+New test
 
