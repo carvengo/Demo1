@@ -1,0 +1,9 @@
+docker exec monitor radosgw-admin user create --uid=admin --display-name=admin --access_key=admin --secret=12345678
+docker exec monitor radosgw-admin caps add --uid=admin --caps="users=read, write"
+docker exec monitor radosgw-admin caps add --uid=admin --caps="usage=read, write"
+docker exec monitor radosgw-admin caps add --uid=admin --caps="buckets=read, write"
+
+docker exec -it monitor /bin/bash
+ ceph -s
+ 
+ ceph dh

@@ -1,0 +1,5 @@
+find -name test.file
+find /var -name test.file
+
+#查看网卡
+nmcli con show
